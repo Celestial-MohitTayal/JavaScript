@@ -9,21 +9,18 @@ function displaySquare(fn) {
 }
 displaySquare(square);
 
-
 // Question 2 :  What is IIFE?
 // Eg-1
 (function square(num) {
   console.log(num * num);
 })(7);
-
+square(8);
 // Eg-2
 (function (x) {
   return (function (y) {
     console.log(x);
   })(2);
 })(1);
-
-
 
 // Question 3 : Closure
 function init() {
@@ -35,8 +32,6 @@ function init() {
   displayName();
 }
 init();
-
-
 
 // Question 4 : Function Scope
 // Q-1
@@ -59,7 +54,6 @@ function getScore() {
 }
 getScore(); // Roadsidecoder scored 7
 
-
 // Q-2
 for (let i = 0; i < 5; i++) {
   setTimeout(function () {
@@ -72,8 +66,6 @@ for (var i = 0; i < 5; i++) {
     console.log(i); // 5 times 5
   }, i * 1000);
 }
-
-
 
 // Question 5 : Function Hoisting
 // Without Hoisting:
@@ -88,8 +80,7 @@ function functionName() {
     console.log("work at tech");
 }
 
-
-// Output 
+// Output
 var x = 21;
 var fun = function () {
     console.log(x);
@@ -97,15 +88,11 @@ var fun = function () {
 };
 fun(); //undefined
 
-
-
 // Question 6 :  Params vs arguments
 const fn = (a, x, y, ...numbers) => {
     console.log(a, x, y, numbers) // 5, 6, 7, [8,9,10] -> Rest Operator
 };
 fn(5,6,7,8,9,10);
-
-
 
 // Question 7 : Spread operator and rest operator
 function multiply(...nums){  // rest operator ,should always be the last one
@@ -114,21 +101,17 @@ function multiply(...nums){  // rest operator ,should always be the last one
 var arr = [5,7];
 multiply(...arr) // Spread operator  -> multiply(5,7)
 
-
-
 // Question 8 : Callback
 function greeting(name) {
     alert('Hello ' + name);
 }
-  
+
 function processUserInput(callback) {
     var name = prompt('Please enter your name.');
     callback(name);
 }
-  
+
 processUserInput(greeting);
-
-
 
 // Question 9 : Arrow functions
 const add = (firstNum, secondNum) => {
@@ -136,8 +119,6 @@ const add = (firstNum, secondNum) => {
 }
 
 const addNum = (firstNum, secondNum) => firstNum + secondNum;
-
-
 
 // Question 10 : this
 let user = {
