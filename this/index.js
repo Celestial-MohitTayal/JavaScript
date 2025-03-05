@@ -127,17 +127,17 @@
 
 
 // // Question 10 : Output
-var length = 4;
-function callback() {
-  console.log(this.length); // What is logged? => 4
-}
-const object = {
-  length: 5,
-  method(callback) {
-    callback();
-  }
-};
-object.method(callback);
+// var length = 4;
+// function callback() {
+//   console.log(this.length); // What is logged? => 4
+// }
+// const object = {
+//   length: 5,
+//   method(callback) {
+//     callback();
+//   }
+// };
+// object.method(callback);
 
 // var length = 4;
 // function callback() {
@@ -173,5 +173,18 @@ object.method(callback);
 //   },
 // };
 
+var age = 10;
+let person = {
+  age: 20,
+  getArrow: () => {
+    console.log(this.age);
+  },
+  getAge() {
+    console.log(this.age)
+  }
+}
 
+let person2 = {age: 24}
 
+person.getAge.call(person2);
+person.getArrow.call(person2);
